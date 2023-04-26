@@ -1,0 +1,25 @@
+﻿@model LoginViewModel
+<div class = "log">
+		<div class = "vhod">Вход</div>
+		<div asp-validation-summary="All"></div>
+		<div class = "container1">
+			<form asp-area="" asp-controller="Account" asp-action="Login" method="post" asp-route-returnUrl="@ViewBag.returnUrl">
+				<div class="E-mail">
+					<input class="searc-txt" type="text" placeholder ="E-mail" asp-for="UserName"></input>
+				</div>
+				<div class="password">
+					<input class="searc-txt" type="password"  placeholder ="пароль" asp-for="Password"></input>
+				</div>
+				<div class = "flex1">
+					<input type = "checkbox" class="rem" asp-for="RememberMe"></input>
+					<a class = "remember" >запомнить меня</a>
+					<a class = "forgot" href = "#">забыли пароль</a>
+				</div>
+
+				<input class = "voiti-txt" type="submit" value="Войти" />
+			</form>
+
+				<div class = "noakk">нет аккаунта?<a class = "regis" asp-area="" asp-controller="Account" asp-action="Register">Зарегистрироваться</a>
+			</div>
+		</div>
+	</div>

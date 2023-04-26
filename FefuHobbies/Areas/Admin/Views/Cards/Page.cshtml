@@ -1,0 +1,53 @@
+﻿@using FefuHobbies.Models
+@model IndexViewModel
+@{
+    bool isEnded = false;
+}
+<div class='container'>
+    @for (int i = 0; i < 5 && !isEnded; i++)
+    {
+        <div class = 'flex1'>
+            @for (int j = 0 + (i * 4); j < 4 + (i * 4); j++)
+            {
+                @if (Model.Cards.ToList().Count() <= j) { isEnded = true; break; }
+                                            <a class = "card" asp-area="admin" asp-controller="Cards" asp-action="CardView" asp-route-id="@Model.Cards.ToList()[j].Id" asp-route-kWords="@Model.keyWords"  asp-route-p="@Model.PageViewModel.PageNumber">                 
+                        <div class = 'card-photo' style="background-image: url('../CardImages/@Model.Cards.ToList()[j].ImagePath'); background-size: cover;">  
+                            <div class = 'flex1'>
+                                <div class = 'card-txt1'>@Model.Cards.ToList()[j].Tag</div>
+                                <div class = 'card-txt2'>@Model.Cards.ToList()[j].Type</div>                                
+                            </div>
+                            <div class = 'card-txt3'>@Model.Cards.ToList()[j].Name</div>
+                            <div class = 'card-txt4'>@Model.Cards.ToList()[j].Date, с @Model.Cards.ToList()[j].startTime до @Model.Cards.ToList()[j].endTime</div>
+                        </div>
+                    </a>
+            }
+        </div>
+    }    
+    <div class = "container4" style = "margin-left: 92% ">
+        <div class = "flex1" style = "margin-top: 5%">
+            @{
+                var k = Model.PageViewModel.PageNumber - 1;
+                if (k > 0)
+                {
+                            <form asp-area="admin" asp-controller="Cards" asp-action="Page" method="post">
+                                <input type="hidden" name="keyWords" value=@Model.keyWords>
+                                <input type="hidden" name="page" value=@k>
+                                <button class = "btnleft"><img src="~/img/right.svg" alt="/"></button>
+                            </form>
+                }
+            }
+            <div class = "cur">@Model.PageViewModel.PageNumber</div>
+            @{
+                var m = Model.PageViewModel.PageNumber + 1;
+                if (m <= Model.PageViewModel.TotalPages)
+                {
+                            <form asp-area="admin" asp-controller="Cards" asp-action="Page" method="post">
+                                <input type="hidden" name="keyWords" value=@Model.keyWords>
+                                <input type="hidden" name="page" value=@m>
+                                <button class = "btnleft"><img src="~/img/left.svg" alt="/"></button>
+                            </form>
+                }
+            }
+        </div>
+    </div>
+</div>

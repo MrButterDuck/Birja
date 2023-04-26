@@ -1,0 +1,947 @@
+{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+before,
+after{
+    box-sizing:inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: calc(100vw / 1920 * 10);
+    @media (max-width: 1024px) {
+        font-size: calc(100vw / 768 * 10);
+    }
+    @media (max-width: 767px) {
+        font-size: calc(100vw / 500 * 10);
+    }
+    @media (max-width: 500px) {
+        font-size: calc(100vw / 375 * 10);
+    }
+}
+
+.container
+{
+    margin: 0px 200px
+}
+
+.header
+{
+    background-color:#FFF;
+    height: 10%;
+}
+
+.header-line
+{
+    padding-top:1%;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.search-box
+{
+    background:#F5F5F5;
+    height: 1%;
+    width: 20%;
+    border-radius: 4rem;
+    padding:1rem;
+}
+
+.search-btn
+{
+    color:#000;
+    float: right;
+    width: 2%;
+    height: 2%;
+    border-radius: 50%;
+    background: #FFF;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.search-txt
+{
+    border:none;
+    background: #F5F5F5;
+    outline: none;
+    float:left;
+    width: 80%;
+    height: 30%;
+}
+
+.nav-item {
+    color: #000;
+    text-decoration: none;
+    font-family: 'Corbel';
+    font-style: normal;
+    line-height: 10%;
+    font-weight: 400;
+    font-size: 2.7rem;
+    margin-right: 7rem;
+}
+.nav-item2 {
+    color: #000;
+    text-decoration: none;
+    font-family: 'Corbel';
+    font-style: normal;
+    line-height: 10%;
+    font-weight: 400;
+    font-size: 3rem;
+}
+.card_open
+{
+    background-color: #F1A000;
+    height: 75rem;
+    border-radius: 2rem;
+    margin-top: 15rem;
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+.cardopen_txt
+{
+    color: white;
+    font-family: 'Corbel';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 9rem;
+    line-height: 140%;
+    padding-top: 10rem;
+    padding-left: 7.5rem;
+}
+
+.btn_cardopen_txt
+{
+    
+    background-color: white;
+    width: 60%;
+    height: 6rem;
+    border-radius: 2rem;
+    
+    font-family: 'Corbel';
+    font-style: normal;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+}
+.cardopen_image
+{
+    padding-top: 1rem;
+    padding-right: 10rem;
+}
+.flex1
+{
+    display: flex;
+    justify-content: space-between;
+}
+.this_week
+{
+color: #3B63AB;
+margin-top: 10rem;
+width: 31.9rem;
+height: 5.8rem;
+left: 15.8rem;
+top: 89.0rem;
+
+font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 4.8rem;
+line-height: 5.8rem;
+}
+.all_meet
+{
+color: #3B63AB;
+margin-top: 10rem;
+padding-left: 155rem;
+width: 18.1rem;
+height: 2.9rem;
+left: 156.9rem;
+top: 90.1rem;
+
+font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 2.4rem;
+line-height: 2.9rem;
+}
+
+.card
+{
+    background-color: #FFF;
+    stroke:blue;
+    height: 65rem;
+    width: 37.5remx;
+    border-radius: 1rem;
+    margin-top: 9rem;
+    display: flex;
+    justify-content: space-between;  
+    text-decoration: none;
+}
+.card:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.card-photo {
+    background-color: #3B63AB;
+    height: 50rem;
+    width: 35.5rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+.card-txt1
+{
+    text-decoration: none;
+    background-color: #FFF;
+    height: 2rem;
+    width: 3rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    
+    font-family: 'Corbel';
+    font-style: normal;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+}
+
+.card-txt2
+{
+    background-color: #FFF;
+    height: 2rem;
+    width: 4rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    border-radius: 1.5rem;
+    
+    font-family: 'Corbel';
+    font-style: normal;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    color: black;
+    text-decoration: none;
+}
+
+.card-txt3
+{
+    margin-left: 1rem;
+    margin-top: 52rem;
+    border-radius: 1.5rem;
+    
+    font-family: 'Corbel';
+    font-style: normal;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+}
+.card-txt4
+{   
+    font-family: 'Corbel';
+    font-style: normal;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+}
+.end-line
+{
+    padding-top:3rem;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.end
+{
+    background-color: #FFF;
+    height: 12.5rem;
+    width: 100%;
+    bottom: 0;
+}
+.serv
+{
+    color: black;
+    text-decoration: none;
+}
+.about
+{
+    color: black;
+    text-decoration: none;
+}
+.meet
+{
+    color: black;
+    text-decoration: none;
+}
+.org
+{
+    color: black;
+    text-decoration: none;
+}
+.loc
+{
+    color: black;
+    text-decoration: none;
+}
+.about-projetc
+{
+    font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 3.rem;
+line-height: 3.6rem;
+text-align: center;
+
+color: #737373;
+}
+.aсtivites
+{
+    font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 3rem;
+line-height: 3.6rem;
+
+
+color: #737373;
+}
+.container1
+{
+    margin: 0rem 7rem
+}
+.log
+{
+margin-top: 20rem;
+margin-left: 40%;
+height: 60rem;
+width: 50rem;
+background: #FFFFFF;
+border-radius: 1rem;
+}
+.vhod
+{
+font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 58px;
+text-align: center;
+
+color: #000000;
+margin-top: 50px;
+
+}
+.E-mail
+{
+    background:#F5F5F5;
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+    padding:10px;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+.password
+{
+    background:#F5F5F5;
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+    padding:10px;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+.rem
+{
+    margin-top: 65px;
+}
+.remember
+{
+margin-right: 125px;
+font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+ margin-top: 60px;
+color: #F1A000;
+text-decoration: none;
+}
+.forgot
+{
+font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+ margin-top: 60px;
+color: #F1A000;
+    text-decoration: none;
+}
+
+.voiti-txt
+{
+    
+    background-color: #3B63AB;
+    width: 325px;
+    height: 60px;
+    border-radius: 10px;
+    margin-left: 25px;
+    
+    font-family: 'Corbel';
+    font-style: normal;
+    font-size: 30px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    text-decoration: none;
+}
+.or
+{
+    margin-top: 10px;
+    font-family: 'Corbel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #737373;
+}
+.btn
+{
+    background-color: #000;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+}
+.noakk
+{
+font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 19px;
+text-align: center;
+margin-top: 140px;
+}
+.regis
+{
+font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 19px;
+text-align: center;
+ text-decoration: none;
+color: #F1A000;
+
+}
+
+.registration
+{
+margin-top: 200px;
+margin-left: 40%;
+height: 600px;
+width: 500px;
+background: #FFFFFF;
+border-radius: 10px;
+}
+
+.registr
+{
+font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 58px;
+text-align: center;
+
+color: #000000;
+margin-top: 50px;
+}
+.name
+{
+    background:#F5F5F5;
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+    padding:10px;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+.fam
+{
+    background:#F5F5F5;
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+    padding:10px;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+.reg-txt
+{
+    background-color: #3B63AB;
+    width: 325px;
+    height: 60px;
+    border-radius: 10px;
+    margin-left: 25px;
+    margin-top: 30px;
+    font-family: 'Corbel';
+    font-style: normal;
+    font-size: 30px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    text-decoration: none;
+}
+.org
+{
+margin: 10px 500px;
+}
+.back
+{
+    font-family: 'Corbel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #F1A000;
+    text-decoration: none;
+}
+.phot
+{
+    width: 550px;
+    height: 600px;
+    background-color: #3B63AB;
+    border-radius: 10px;
+}
+.name-meet
+{
+    width: 850px;
+    height: 450px;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+.name-meet-txt
+{
+    font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 48px;
+    margin-left: 25px;
+    margin-top:10px;
+}
+.text-meet
+{
+    margin-left: 25px;
+    margin-top:10px;
+    font-family: 'Corbel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+}
+.tip
+{
+    
+    margin-right: 20px;
+    margin-top: 300px;
+    float: right;
+    background: #F5F5F5;
+    border-radius: 15px;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 36px;
+text-align: center;
+}
+.teg
+{
+    
+    margin-right: 40px;
+    margin-top: 300px;
+    float: right;
+    background: #F5F5F5;
+    border-radius: 15px;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 36px;
+text-align: center;
+}
+.info-meet
+{
+    width: 850px;
+    height: 100px;
+    background-color: #FFF;
+    border-radius: 10px;
+    margin-left: 635px;
+    margin-top: -100px;
+}
+span
+{
+    margin-left: 15px;
+    margin-top: 5px;
+    font-family: 'HeliosC';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+}
+.btn-go
+{
+    margin-right: 30px;
+    margin-top: 15px;
+    width: 300px;
+    height: 75px;
+    background-color: #F1A000;
+    border-radius: 10px;
+    text-align: center;
+    color:#FFF;
+    font-family: 'Corbel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 65px;
+    text-decoration: none;
+}
+
+.container2
+{
+    margin: 50px 600px;
+}
+.new-meet
+{
+font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 43px;
+}
+.obl
+{
+    height: 50%;
+    width: 50%;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+.obloj
+{
+font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+margin-top: 10px;
+text-align: center;
+}
+.btn-upload
+{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.upload_photot {
+    position: relative;
+	display: inline-block;
+}
+    .upload_photot input[type=file] {
+
+    }
+
+.upload_photot {
+    width: 40%;
+    height: 40px;
+    text-decoration: none;
+    background-color: #F5F5F5;
+    color: #000;
+    font-family: 'Corbel';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 30px;
+    border-radius: 10px;
+    color: #737373;
+}
+.setupload
+{
+margin-top: 20px;
+font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+color: #737373;
+}
+.who
+{
+    height: 60%;
+    width: 45%;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+.remnant
+{
+    
+}
+.all
+{
+    margin-left: 20px;
+    margin-top: -20px;
+    font-family: 'Corbel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 31px;
+    
+}
+  .custom-radio {
+    margin-top: 5%;
+    opacity: 0;
+  }
+  .custom-radio+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+.custom-radio+label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    border-color: #F1A000;
+  }
+
+
+  .custom-radio:not(:disabled):not(:checked)+label:hover::before {
+    border-color: #b3d7ff;
+  }
+
+
+  .custom-radio:focus:not(:checked)+label::before {
+    border-color: #80bdff;
+  }
+
+  .custom-radio:checked+label::before {
+    border-color:#F1A000;
+    background-color: #F1A000; 
+  }
+.who-can
+{
+    margin-top: 5%;
+    margin-left: 5%;
+    font-family: 'Corbel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+}
+.wait
+{
+    width: 50%;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+}
+.name-txt
+{
+    border:none;
+    background: #FFF;
+    outline: none;
+    float:left;
+    width: 80%;
+    height: 10%;
+    border-radius: 10px;
+    font-size: 24px;
+}
+
+.about_meet
+{
+    width: 85%;
+    height: 400px;
+    resize: none;
+    border:none;
+    outline: none;
+    padding-left: 7%;
+    font-size: 16px;
+}
+.pdt
+{
+    width: 45%;
+    height: 250px;
+    border-radius: 10px;
+    background-color: #FFF;
+    margin-top: 3%;
+}
+.npdt
+{
+    font-family: 'Corbel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    padding-top: 2%; 
+}
+.place-txt
+{
+   border:none;
+    background: #FFF;
+    outline: none;
+    float:left;
+    width: 90%;
+    height: 10%;
+    border-radius: 10px;
+    font-size: 20px; 
+    padding-top: 3%;
+    padding-left: 7%;
+}
+.datatxt
+{
+    font-family: 'Corbel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 36px;
+    padding-top: 2%;
+}
+.container3
+{
+    margin-left: 7%;
+}
+.datameet
+{
+    width: 30%;
+    height: 30px;
+    border-radius: 12px;
+    border-color: #3B63AB;
+    outline-color: #3B63AB;
+}
+.time-to-start
+{
+    width: 14%;
+    
+    border-radius: 10px;
+    border-color: #3B63AB;
+    outline-color: #3B63AB;
+}
+.time-to-stop
+{
+    width: 14%;
+    
+    border-radius: 10px;
+    border-color: #3B63AB;
+    outline-color: #3B63AB;
+}
+.ot
+{
+font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+}
+.do
+{
+font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+}
+.vid-meet
+{
+    width: 22%;
+    height: 130px;
+    background-color: #FFF;
+    margin-top: 5%;
+    border-radius:10px;
+}
+.vid
+{
+font-family: 'Corbel';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+text-align: center;
+padding-top: 5%;
+}
+.listic
+{
+    border-color: #3B63AB;
+    border-radius: 10px;
+    height: 30px;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+.teg-meet
+{
+    width: 22%;
+    height: 130px;
+    background-color: #FFF;
+    margin-top: 5%;
+    border-radius:10px;
+    margin-left: 28%;
+    margin-top: -10%;
+}
+.public
+{
+    
+    background-color: white;
+    width: 50%;
+    height: 80px;
+    border-radius: 20px;
+    background-color: #3B63AB;
+    margin-top: 5%;
+    font-family: 'Corbel';
+    font-style: normal;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+}

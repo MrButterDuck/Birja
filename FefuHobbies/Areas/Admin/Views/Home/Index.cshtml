@@ -1,0 +1,33 @@
+﻿@model IQueryable<Card>
+@{
+	string strTitle = "Панель администратора";
+	ViewBag.Title = strTitle;
+}
+
+<div>
+	<h1>@strTitle</h1>
+	<div>
+		<a asp-area="Admin" asp-controller="Cards" asp-action="Edit" asp-route-id="">Добавить карточку</a>
+	</div>
+	@if (Model.Any())
+	{
+		<div>
+			@foreach (Card enity in Model)
+			{
+				<div>
+					<a asp-area="Admin" asp-controller="Cards" asp-action="Edit" asp-route-id="@enity.Id">Изменить карточку</a>
+							<form id="form-@enity.Id" asp-area="Admin" asp-controller="Cards" asp-action="Delete" >
+						<input type="hidden" name="id" value="@enity.Id">
+						<a href = '#' onclick="document.getElementById('form-@enity.Id').submit();">Удалить</a>
+					</form>
+					<a asp-area="Admin" asp-controller="Cards" asp-action="CardView" asp-route-id="@enity.Id" asp-route-retCrl="Home" asp-route-retAct="Index">@($"{enity.Name}")</a>
+				</div>
+			}
+		</div>
+	}
+	<div>
+		<form id="" asp-area="" asp-controller="Account" asp-action="Logout" method="post" >
+			<input type="submit" value="Выйти">
+		</form>
+	</div>
+</div>

@@ -1,0 +1,94 @@
+﻿@model Card
+@{
+    string strTitle = "Редактировать запись";
+    ViewBag.Title = strTitle;
+}
+<form asp-area="Admin" asp-controller="Cards" asp-action="Edit" method="post" enctype="multipart/form-data" >
+    <input type="hidden" asp-for="Id"/>
+    <input type="hidden" asp-for="ImagePath"/>
+<div class = "container2">     
+    <a class = "back" asp-area="Admin" asp-controller="Home" asp-action="Index">назад</a>
+    <div class = "new-meet" asp-validation-summary="All">Новое мероприятие</div>
+    <div class = "flex1"> 
+
+        <div class = "obl">
+            <div class = "obloj">Обложка</div>
+            <div class = "btn-upload">
+                <label class="upload_photot" >
+                    <input type="file" name="titleImageFile" id="titleImageFile"  accept="image/png, image/jpeg">		
+                 </label>
+                 
+            <div class = "setupload">PNG,JPG размером 593Х650 не более 35 Mb. </div>
+             <img src="~/CardImages/@Model.ImagePath" alt="/" style="max-width: 100%;height: auto;"/>
+            </div>
+       </div>
+
+        <div class = "who">
+                <div class = "who-can">Кто может учавствовать</div>
+                <div class="radio">
+                    <input class="custom-radio" asp-for="access" type="radio" id="color-1" value="0">
+                    <label for="color-1" style="font-size: 2rem">Все</label>
+                 </div>
+                <div class="radio">
+                    <input class="custom-radio" asp-for="access" type="radio" id="color-2"  value="1">
+                    <label for="color-2" style="font-size: 2rem">Только студенты ДВФУ</label>
+                 </div>
+                <div class="radio">
+                    <input class="custom-radio" asp-for="access" type="radio" id="color-3" value="2">
+                    <label for="color-3" style="font-size: 2rem">Только организации</label>
+                 </div>
+        </div>
+    </div>
+    <div class = "flex1">
+        <div class = "wait">
+            <input class="name-txt" asp-for="Name" type="text" placeholder="Введите название мероприятия">
+            <form>
+                 <textarea  placeholder="О чем мероприятие?" asp-for="Description" class = "about_meet"></textarea> 
+            </form>
+        </div>
+
+       <div class = "pdt">
+            <div class = "npdt">Место,дата и время</div>
+            <input class="place-txt" asp-for="Location" type="text" placeholder="Введите место проведения">
+            <div class = "container3">
+                <div class = "datatxt">Дата</div>
+                <input class ="datameet" type ="date" asp-for="Date">
+                <div class = "ot">От</div>
+                <input class = "time-to-start" type="time" asp-for="startTime">  
+                <div class = "do">До</div>
+                <input class = "time-to-stop" type="time" asp-for="endTime">
+           </div>
+       </div>
+    </div>
+    <div class = "vid-meet">
+        <div class = "vid">Вид мероприятия</div>
+        <input list = "list1" asp-for="Type" type = "text" class = "listic" pattern="Лекция|Мастер-класс|Воркшоп|Встреча|Обсуждение|Хакатон|Соревнование|Точка-интереса" title='Выберете один из предложенных видов для мероприятия'>
+        <datalist id = "list1">
+            <option value="Лекция"></option>
+            <option value="Мастер-класс"></option>
+            <option value="Воркшоп"></option>
+            <option value="Встреча"></option>
+            <option value="Обсуждение"></option>
+            <option value="Хакатон"></option>
+            <option value="Соревнование"></option>
+            <option value="Точка-интереса"></option>
+         </datalist>
+    </div>
+    <div class = "teg-meet">
+        <div class = "vid">Тег мероприятия</div>
+        <input list = "list2" asp-for="Tag" type = "text" class = "listic" pattern="IT|Digital|Икусство|Наука|Языки|Спорт|Другое" title='Выберете один из предложенных тэгов для мероприятия'>
+        <datalist id = "list2">
+                <option value="IT"></option>
+                <option value="Digital"></option>
+                <option value="Икусство"></option>
+                <option value="Наука"></option>
+                <option value="Языки"></option>
+                <option value="Спорт"></option>
+                <option value="Другое"></option>
+        </datalist>
+    </div>
+    <input type = "checkbox" class="rem" asp-for="IsPublished"></input>
+    <a class = "remember" >Опубликовать</a>
+    <input class = "public" type="submit" value="Отправить" />
+</div>
+</form>
