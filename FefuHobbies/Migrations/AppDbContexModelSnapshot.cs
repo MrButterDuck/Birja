@@ -53,9 +53,6 @@ namespace FefuHobbies.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("PeopleCount")
-                        .HasColumnType("bigint");
-
                     b.Property<string>("Tag")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -110,14 +107,14 @@ namespace FefuHobbies.Migrations
                         new
                         {
                             Id = "c2cc70ec-dec2-11ed-b5ea-0242ac120002",
-                            ConcurrencyStamp = "6d32c1da-7d53-4ee9-83b6-565b2b5bca1a",
+                            ConcurrencyStamp = "1bc47623-411c-4682-979e-7452adc9ee23",
                             Name = "user",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = "812517a2-dec2-11ed-b5ea-0242ac120002",
-                            ConcurrencyStamp = "9c106848-5a39-49b9-9c5a-1eb658482465",
+                            ConcurrencyStamp = "2862404d-f22b-4231-8a66-0e09e0857964",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -217,13 +214,13 @@ namespace FefuHobbies.Migrations
                         {
                             Id = "23587d20-dec3-11ed-b5ea-0242ac120002",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "02c76e7b-b4d7-42f1-b9a0-bbdcdc07a06d",
+                            ConcurrencyStamp = "71ad5586-b920-42f8-bdf6-4d32c2f71124",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHjWsfpZZnc838h0OUYrn3EKZ8rURq+UjZi0pIkGzNhYP4V/i4yZMZkOn4Ja8uivug==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELfF+EWTMYpCOIzDXqTmlsVt4NNAT/svPu4vfpFXA7tcpjRGaYlYYBa0NJUcXCmisA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

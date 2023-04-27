@@ -16,6 +16,7 @@
 
                 <div class="search-box">
                     <form asp-area="Admin" asp-controller="Cards" asp-action="Page" method="post"  >
+                        <input type="hidden" name="isPublished" id="isPublished" value="true">
                         <input class="search-txt" type="text" name="keyWords" id="keyWords">
                             <img class = "lp"  src="~/img/lupa.svg" alt="/">
                         </input>

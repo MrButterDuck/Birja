@@ -20,5 +20,9 @@ namespace FefuHobbies.Areas.User.Controllers
             model.second = dataManager.Cards.ByType("Точка-интереса").Take(4);
             return View(model);
         }
+        public IActionResult About()
+        {
+            return View();
+        }
     }
 }

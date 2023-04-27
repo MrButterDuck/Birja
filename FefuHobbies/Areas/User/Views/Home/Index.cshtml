@@ -3,19 +3,19 @@
 <div class='container'>
             <div class = 'card_open'>
                 <div class='cardopen_txt'>Отдыхай,<br>Учись,<br>Наслаждайся!
-                    <a class="btn_cardopen_txt"href="#">Подробнее</a>
+                    <a class="btn_cardopen_txt"asp-area="user" asp-controller="Home" asp-action="About">Подробнее</a>
                 </div>
                 <div class ='cardopen_image'>
-                    <img class = "sr"  src="~/img/star.svg" alt="/" height="700" width="700">
+                    <img class = "sr"  src="~/img/star.svg" alt="/" >
                 </div>
             </div>
-<div class = 'flex1'>
+<div class = 'flex2'>
     <div class = 'this_week'>На этой неделе</div>
-        <a class = 'all_meet' asp-area="" asp-controller="Cards" asp-action="Events">все мероприятия</a>
+        <a class = 'all_meet' asp-area="User" asp-controller="Cards" asp-action="Events">все мероприятия</a>
         </div> 
     </div>
     <div class='container'>
-        <div class = 'flex1'>
+        <div class = 'flex2'>
         @foreach (Card c in Model.last)
         {
                                     <a class = "card" asp-area="User" asp-controller="Cards" asp-action="CardView" asp-route-id="@c.Id">                 
@@ -32,13 +32,13 @@
 
         </div>
 
-        <div class = 'flex1'>
+        <div class = 'flex2'>
             <div class = 'this_week'>Где погулять</div>
-            <a class = 'all_meet' asp-area="" asp-controller="Cards" asp-action="PointsOfInterst">все мероприятия</a>
+            <a class = 'all_meet' asp-area="User" asp-controller="Cards" asp-action="PointsOfInterst">все мероприятия</a>
         </div>      
     </div>
         <div class='container'>
-        <div class = 'flex1'>
+        <div class = 'flex2'>
         @foreach (Card c in Model.second)
         {
                                             <a class = "card" asp-area="User" asp-controller="Cards" asp-action="CardView" asp-route-id="@c.Id" asp-route-retCtrl="Home" asp-route-retAcr="Index">                 

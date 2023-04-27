@@ -48,7 +48,7 @@ namespace FefuHobbies.Controllers
         [HttpPost]
         public async Task<IActionResult> PointsOfInterst(int page = 1)
         {
-            int pageSize = 10;   // количество элементов на странице
+            int pageSize = 20;   // количество элементов на странице
             IQueryable<Card> source = dataManager.Cards.ByType("Точка-интереса");
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
@@ -66,7 +66,7 @@ namespace FefuHobbies.Controllers
         [HttpPost]
         public async Task<IActionResult> Events(int page = 1)
         {
-            int pageSize = 10;   // количество элементов на странице
+            int pageSize = 20;   // количество элементов на странице
             IQueryable<Card> source = dataManager.Cards.excludeType("Точка-интереса");
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
@@ -84,7 +84,7 @@ namespace FefuHobbies.Controllers
         [HttpPost]
         public async Task<IActionResult> Last(int page = 1)
         {
-            int pageSize = 10;   // количество элементов на странице
+            int pageSize = 20;   // количество элементов на странице
             IQueryable<Card> source = dataManager.Cards.Last();
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();

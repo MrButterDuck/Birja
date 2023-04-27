@@ -13,7 +13,7 @@
                 <input class="back" type="submit" value="назад">
             </form>
     }
-    <div class = "flex1">
+    <div class = "flex2">
         <div class = "phot" ><img class = "phot" src="~/CardImages/@Model.card.ImagePath"/></div>
         <div class = "name-meet">
             <div class = "name-meet-txt">@Model.card.Name</div>
@@ -28,20 +28,19 @@
         <span>
         <div class = "flex1">
         <img class = "sp"  src="~/img/cal.svg" alt = "/">
-        <div class ="calc">@Model.card.Date</div>
+        <div class ="calcc">@Model.card.Date</div>
         </div>
 
         <div class = "flex1">
         <img class = "sp"  src="~/img/time.svg" alt = "/">
-        <div class ="calc">@Model.card.startTime-@Model.card.endTime</div>
+        <div class ="calcc">@Model.card.startTime-@Model.card.endTime</div>
         </div>
 
         <div class = "flex1">
         <img class = "sp" src="~/img/place.svg" alt = "/">
-        <div class ="calc">@Model.card.Location</div>
+        <div class ="calcc">@Model.card.Location</div>
         </div>
         </span>
-        <a class = "btn-go" href ="#">Участвовать</a>
         </div>
         </div>
 

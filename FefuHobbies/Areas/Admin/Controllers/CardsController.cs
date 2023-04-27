@@ -72,10 +72,10 @@ namespace FefuHobbies.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Page(string keyWords, int page = 1)
+        public async Task<IActionResult> Page(string keyWords, int page = 1, bool isPublished = true)
 		{
             int pageSize = 2;   // количество элементов на странице
-            IQueryable<Card> source = dataManager.Cards.FindCards(keyWords, true);
+            IQueryable<Card> source = dataManager.Cards.FindCards(keyWords, isPublished);
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
@@ -93,7 +93,7 @@ namespace FefuHobbies.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> PointsOfInterst(int page = 1)
         {
-            int pageSize = 10;   // количество элементов на странице
+            int pageSize = 20;   // количество элементов на странице
             IQueryable<Card> source = dataManager.Cards.ByType("Точка-интереса");
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
@@ -110,7 +110,7 @@ namespace FefuHobbies.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Events(int page = 1)
         {
-            int pageSize = 10;   // количество элементов на странице
+            int pageSize = 20;   // количество элементов на странице
             IQueryable<Card> source = dataManager.Cards.excludeType("Точка-интереса");
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
@@ -128,7 +128,7 @@ namespace FefuHobbies.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Last(int page = 1)
         {
-            int pageSize = 10;   // количество элементов на странице
+            int pageSize = 20;   // количество элементов на странице
             IQueryable<Card> source = dataManager.Cards.Last();
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();

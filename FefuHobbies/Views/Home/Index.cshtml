@@ -2,57 +2,53 @@
 @model MainViewModel
 
 <div class='container'>
-            <div class = 'card_open'>
-                <div class='cardopen_txt'>Отдыхай,<br>Учись,<br>Наслаждайся!
-                    <a class="btn_cardopen_txt"href="#">Подробнее</a>
-                </div>
-                <div class ='cardopen_image'>
-                    <img class = "sr"  src="~/img/star.svg" alt="/" height="700" width="700">
-                </div>
+    <div class = 'card_open'>
+        <div class='cardopen_txt'>Отдыхай,<br>Учись,<br>Наслаждайся!
+            <a class="btn_cardopen_txt" asp-area="" asp-controller="Home" asp-action="About">Подробнее</a>
+        </div>
+        <div class ='cardopen_image'>
+            <img class = "sr"  src="~/img/star.svg" alt="/">
+        </div>
+    </div>
+    <div class = 'flex2'>
+        <div class = 'this_week'>На этой неделе</div>
+        <a class = 'all_meet' asp-area="" asp-controller="Cards" asp-action="Events">все мероприятия</a>
+    </div> 
+</div>
+<div class='container'>
+    <div class = 'flex2'>
+    @foreach(Card c in Model.last){
+        <a class = "card" asp-area="" asp-controller="Cards" asp-action="CardView" asp-route-id="@c.Id">                 
+        <div class = 'card-photo' style="background-image: url('../CardImages/@c.ImagePath'); background-size: cover;">  
+            <div class = 'flex1'>
+                <div class = 'card-txt1'>@c.Tag</div>
+                <div class = 'card-txt2'>@c.Type</div>                                
             </div>
-<div class = 'flex1'>
-    <div class = 'this_week'>На этой неделе</div>
-    <a class = 'all_meet' asp-area="" asp-controller="Cards" asp-action="Events">все мероприятия</a>
-        </div> 
-    </div>
-    <div class='container'>
-        <div class = 'flex1'>
-            @foreach(Card c in Model.last){
-                    <a class = "card" asp-area="" asp-controller="Cards" asp-action="CardView" asp-route-id="@c.Id">                 
-                                    <div class = 'card-photo' style="background-image: url('../CardImages/@c.ImagePath'); background-size: cover;">  
-                        <div class = 'flex1'>
-                            <div class = 'card-txt1'>@c.Tag</div>
-                            <div class = 'card-txt2'>@c.Type</div>                                
-                        </div>
-                            <div class = 'card-txt3'>@c.Name</div>
-                                <div class = 'card-txt4'>@c.Date, с @c.startTime до @c.endTime</div>
-                    </div>
-                </a>
-            }
-
+            <div class = 'card-txt3'>@c.Name</div>
+            <div class = 'card-txt4'>@c.Date, с @c.startTime до @c.endTime</div>
         </div>
-
-        <div class = 'flex1'>
-            <div class = 'this_week'>Где поугялть</div>
-            <a class = 'all_meet' asp-area="" asp-controller="Cards" asp-action="PointsOfInterst">все мероприятия</a>
-        </div>      
+        </a>
+    }
     </div>
-        <div class='container'>
-        <div class = 'flex1'>
-            @foreach (Card c in Model.second)
-            {
-                                        <a class = "card" asp-area="" asp-controller="Cards" asp-action="CardView" asp-route-id="@c.Id" asp-route-retCtrl="Home" asp-route-retAct="Index">                 
-                                                <div class = 'card-photo' style="background-image: url('../CardImages/@c.ImagePath'); background-size: cover;">  
-                                <div class = 'flex1'>
-                                    <div class = 'card-txt1'>@c.Tag</div>
-                                    <div class = 'card-txt2'>@c.Type</div>                                
-                                </div>
-                                    <div class = 'card-txt3'>@c.Name</div>
-                                            <div class = 'card-txt4'>@c.Date, с @c.startTime до @c.endTime</div>
-                            </div>
-                        </a>
-            }
-     
+    <div class = 'flex2'>
+        <div class = 'this_week'>Где поугялть</div>
+        <a class = 'all_meet' asp-area="" asp-controller="Cards" asp-action="PointsOfInterst">все мероприятия</a>
+    </div>      
+</div>
+<div class='container'>
+    <div class = 'flex2'>
+    @foreach (Card c in Model.second)
+    {
+        <a class = "card" asp-area="" asp-controller="Cards" asp-action="CardView" asp-route-id="@c.Id" asp-route-retCtrl="Home" asp-route-retAct="Index">                 
+        <div class = 'card-photo' style="background-image: url('../CardImages/@c.ImagePath'); background-size: cover;">  
+            <div class = 'flex1'>
+                <div class = 'card-txt1'>@c.Tag</div>
+                <div class = 'card-txt2'>@c.Type</div>                                
+            </div>
+            <div class = 'card-txt3'>@c.Name</div>
+            <div class = 'card-txt4'>@c.Date, с @c.startTime до @c.endTime</div>
         </div>
-         </div>
-         </div>
+        </a>
+    }    
+    </div>
+</div>

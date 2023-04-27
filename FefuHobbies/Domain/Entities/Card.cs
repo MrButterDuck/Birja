@@ -36,10 +36,13 @@ namespace FefuHobbies.Domain.Entities
         public string Tag { get; set; }
         [Display(Name = "Обложка")]
         public string ImagePath { get; set; }
-        [Display(Name = "Колличество участников")]
-        public uint PeopleCount { get; set; }
         [Display(Name = "Принято")]
         public bool IsPublished { get; set; }
+        //[Display(Name = "Колличество участников")]
+        //public uint Count { get; set; }
+        //[Display(Name = "Участники")]
+        //public List<PeopleList> people { get; set; }
+        
 
     }
 }

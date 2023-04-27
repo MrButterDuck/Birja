@@ -12,5 +12,7 @@ namespace FefuHobbies.Domain.Repositories.Abstract
 		public IQueryable<Card> Last();
 		public IQueryable<Card> ByType(string typet);
 		public IQueryable<Card> excludeType(string type);
+		//public List<PeopleList> getEmails(ulong id);
+		//public void SaveEmail(PeopleList list);
     }
 }

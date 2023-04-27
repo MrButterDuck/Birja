@@ -1,5 +1,8 @@
 ﻿using FefuHobbies.Domain;
+using FefuHobbies.Domain.Entities;
+using FefuHobbies.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FefuHobbies.Areas.Admin.Controllers
 {
@@ -12,9 +15,21 @@ namespace FefuHobbies.Areas.Admin.Controllers
             this.dataManager = dataManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(dataManager.Cards.GetCards());
+            int pageSize = 20;   // количество элементов на странице
+            IQueryable<Card> source = dataManager.Cards.FindCards(" ", false);
+            var count = await source.CountAsync();
+            var items = await source.Take(pageSize).ToListAsync();
+
+            PageViewModel pageViewModel = new PageViewModel(count, 1, pageSize);
+            IndexViewModel viewModel = new IndexViewModel
+            {
+                PageViewModel = pageViewModel,
+                Cards = items,
+                keyWords = " "
+            };
+            return View(viewModel);
         }
     }
 }

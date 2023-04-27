@@ -51,7 +51,7 @@ namespace FefuHobbies.Domain.Repositories.EntityFramework
 
         public IQueryable<Card> Last()
 		{
-			var r = context.Cards.AsEnumerable().OrderBy(x => x.Id).Where(x => x.IsPublished == true).ToList();
+			List<Card> r = context.Cards.AsEnumerable().OrderBy(x => x.Id).Where(x => x.IsPublished == true).ToList();
             return r.AsQueryable();
 		}
         public IQueryable<Card> ByType(string type)
@@ -62,6 +62,20 @@ namespace FefuHobbies.Domain.Repositories.EntityFramework
         {
             return context.Cards.Where(x => x.Type != type).Where(x => x.IsPublished == true);
         }
+
+        //public List<PeopleList> getEmails(ulong id)
+        //{
+        //	return (List<PeopleList>)context.Cards.Where(x => x.Id == id).Select(y => y.people);
+        //}
+
+        //public void SaveEmail(PeopleList list)
+        //{
+        //    if (list.Id == default)
+        //context.Entry(list).State = EntityState.Added;
+        //   else
+        //context.Entry(list).State = EntityState.Modified;
+        //context.SaveChanges();
+        //}
 
     }
 }

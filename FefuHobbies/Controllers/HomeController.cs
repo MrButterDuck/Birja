@@ -25,7 +25,7 @@ namespace FefuHobbies.Controllers
         [HttpPost]
         public async Task<IActionResult> Page(string keyWords, int page = 1)
         {
-            int pageSize = 10;   // количество элементов на странице
+            int pageSize = 2;   // количество элементов на странице
             IQueryable<Card> source = dataManager.Cards.FindCards(keyWords, true);
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
@@ -38,5 +38,10 @@ namespace FefuHobbies.Controllers
             };
             return View(viewModel);
         }
+        public IActionResult About()
+        {
+            return View();
+        }
+
     }
 }

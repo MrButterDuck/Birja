@@ -2,9 +2,12 @@
 using FefuHobbies.Domain.Entities;
 using FefuHobbies.Models;
 using FefuHobbies.Service;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
+using System.Security.Principal;
 
 namespace FefuHobbies.Areas.User.Controllers
 {
@@ -30,7 +33,7 @@ namespace FefuHobbies.Areas.User.Controllers
             {
                 card = dataManager.Cards.GetCardById(id),
                 keyWords = kWords,
-                page = p
+                page = p,
             };
             return View(entity);
         }
@@ -70,7 +73,7 @@ namespace FefuHobbies.Areas.User.Controllers
         [HttpPost]
         public async Task<IActionResult> Page(string keyWords, int page = 1)
         {
-            int pageSize = 2;   // количество элементов на странице
+            int pageSize = 20;   // количество элементов на странице
             IQueryable<Card> source = dataManager.Cards.FindCards(keyWords, true);
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
@@ -90,7 +93,7 @@ namespace FefuHobbies.Areas.User.Controllers
         [HttpPost]
         public async Task<IActionResult> PointsOfInterst(int page = 1)
         {
-            int pageSize = 10;   // количество элементов на странице
+            int pageSize = 20;   // количество элементов на странице
             IQueryable<Card> source = dataManager.Cards.ByType("Точка-интереса");
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
@@ -108,7 +111,7 @@ namespace FefuHobbies.Areas.User.Controllers
         [HttpPost]
         public async Task<IActionResult> Events(int page = 1)
         {
-            int pageSize = 10;   // количество элементов на странице
+            int pageSize = 20;   // количество элементов на странице
             IQueryable<Card> source = dataManager.Cards.excludeType("Точка-интереса");
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
