@@ -1,0 +1,47 @@
+﻿@model CardViewModel
+
+<div class ="org">
+    @if (Model.keyWords == null)
+    {
+            <a class = "back"  asp-area="user" asp-controller="Home" asp-action="Index">назад</a>
+    }
+    else
+    {
+            <form asp-area="user" asp-controller="Cards" asp-action="Page" method="post"  >
+                <input type="hidden" name="keyWords" value=@Model.keyWords>
+                <input type="hidden" name="page" value=@Model.page>
+                <input class="back" type="submit" value="назад">
+            </form>
+    }
+    <div class = "flex2">
+        <div class = "phot" ><img class = "phot" src="~/CardImages/@Model.card.ImagePath"/></div>
+        <div class = "name-meet">
+            <div class = "name-meet-txt">@Model.card.Name</div>
+            <div class = "text-meet">@Model.card.Description</div>
+            <div class = "teg"></div>
+            <div class = "tip">@Model.card.Type</div>
+            </div>
+        </div>
+
+    <div class = "info-meet">
+        <div class = "flex1">
+        <span>
+        <div class = "flex1">
+        <img class = "sp"  src="~/img/cal.svg" alt = "/">
+        <div class ="calcc"></div>
+        </div>
+
+        <div class = "flex1">
+        <img class = "sp"  src="~/img/time.svg" alt = "/">
+        <div class ="calcc"></div>
+        </div>
+
+        <div class = "flex1">
+        <img class = "sp" src="~/img/place.svg" alt = "/">
+        <div class ="calcc"></div>
+        </div>
+        </span>
+        </div>
+        </div>
+
+        </div>
