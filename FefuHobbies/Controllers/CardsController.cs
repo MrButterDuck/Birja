@@ -35,13 +35,13 @@ namespace FefuHobbies.Controllers
         }
         public IActionResult CardView(ulong id, string kWords = null, int p = default)
         {
-            CardViewModel entity = new CardViewModel
+            /*CardViewModel entity = new CardViewModel
             {
                 card = dataManager.Cards.GetCardById(id),
                 keyWords=kWords,
                 page = p
-            };
-            return View(entity);
+            };*/
+            return View();
         }
 
         [HttpGet]
@@ -49,7 +49,7 @@ namespace FefuHobbies.Controllers
         public async Task<IActionResult> PointsOfInterst(int page = 1)
         {
             int pageSize = 20;   // количество элементов на странице
-            IQueryable<Card> source = dataManager.Cards.ByType("Точка-интереса");
+            IQueryable<Card> source = dataManager.Cards.GetCards();
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
@@ -67,7 +67,7 @@ namespace FefuHobbies.Controllers
         public async Task<IActionResult> Events(int page = 1)
         {
             int pageSize = 20;   // количество элементов на странице
-            IQueryable<Card> source = dataManager.Cards.excludeType("Точка-интереса");
+            IQueryable<Card> source = dataManager.Cards.GetCards();
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
@@ -85,7 +85,7 @@ namespace FefuHobbies.Controllers
         public async Task<IActionResult> Last(int page = 1)
         {
             int pageSize = 20;   // количество элементов на странице
-            IQueryable<Card> source = dataManager.Cards.Last();
+            IQueryable<Card> source = dataManager.Cards.GetCards();
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 

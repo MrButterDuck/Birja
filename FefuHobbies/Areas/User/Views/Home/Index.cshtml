@@ -21,11 +21,11 @@
                                     <a class = "card" asp-area="User" asp-controller="Cards" asp-action="CardView" asp-route-id="@c.Id">                 
                                         <div class = 'card-photo' style="background-image: url('../CardImages/@c.ImagePath'); background-size: cover;">  
                             <div class = 'flex1'>
-                                <div class = 'card-txt1'>@c.Tag</div>
+                                <div class = 'card-txt1'></div>
                                 <div class = 'card-txt2'>@c.Type</div>                                
                             </div>
                                 <div class = 'card-txt3'>@c.Name</div>
-                                    <div class = 'card-txt4'>@c.Date, с @c.startTime до @c.endTime</div>
+                                    <div class = 'card-txt4'>, с </div>
                         </div>
                     </a>
         }
@@ -44,11 +44,11 @@
                                             <a class = "card" asp-area="User" asp-controller="Cards" asp-action="CardView" asp-route-id="@c.Id" asp-route-retCtrl="Home" asp-route-retAcr="Index">                 
                                                     <div class = 'card-photo' style="background-image: url('../CardImages/@c.ImagePath'); background-size: cover;">  
                                     <div class = 'flex1'>
-                                        <div class = 'card-txt1'>@c.Tag</div>
+                                        <div class = 'card-txt1'></div>
                                         <div class = 'card-txt2'>@c.Type</div>                                
                                     </div>
                                         <div class = 'card-txt3'>@c.Name</div>
-                                                <div class = 'card-txt4'>@c.Date, с @c.startTime до @c.endTime</div>
+                                                <div class = 'card-txt4'>, с </div>
                                 </div>
                             </a>
         }

@@ -45,7 +45,7 @@ namespace Website
             //настраиваем authentication coockie
             builder.Services.ConfigureApplicationCookie(opts =>
             {
-                opts.Cookie.Name = "FefuHobbiesAuth";
+                opts.Cookie.Name = "BirjaAuth";
                 opts.Cookie.HttpOnly = true;
                 opts.LoginPath = "/account/login";
                 opts.AccessDeniedPath = "/account/accessdenied";

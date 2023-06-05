@@ -9,10 +9,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace FefuHobbies.Migrations
+namespace Birja.Migrations
 {
     [DbContext(typeof(AppDbContex))]
-    [Migration("20230427191638__init")]
+    [Migration("20230604225812__init")]
     partial class _init
     {
         /// <inheritdoc />
@@ -33,45 +33,63 @@ namespace FefuHobbies.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<decimal>("Id"));
 
-                    b.Property<string>("Date")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EndDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("HighPay")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HomeJob")
+                        .HasColumnType("int");
 
                     b.Property<string>("ImagePath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsPublished")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("LowPay")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Tag")
+                    b.Property<string>("Prof1")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Type")
+                    b.Property<string>("Prof2")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("access")
-                        .HasColumnType("int");
-
-                    b.Property<string>("endTime")
+                    b.Property<string>("Prof3")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("startTime")
+                    b.Property<string>("Skills1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Skills2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Skills3")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StartDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<short>("Type")
+                        .HasColumnType("smallint");
+
+                    b.Property<string>("requirements")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -110,14 +128,14 @@ namespace FefuHobbies.Migrations
                         new
                         {
                             Id = "c2cc70ec-dec2-11ed-b5ea-0242ac120002",
-                            ConcurrencyStamp = "1bc47623-411c-4682-979e-7452adc9ee23",
+                            ConcurrencyStamp = "e50824da-7f2a-447b-8cdf-1bdf0ab4f08b",
                             Name = "user",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = "812517a2-dec2-11ed-b5ea-0242ac120002",
-                            ConcurrencyStamp = "2862404d-f22b-4231-8a66-0e09e0857964",
+                            ConcurrencyStamp = "66472702-6f06-4bf2-81d4-6459f2cefe55",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -217,13 +235,13 @@ namespace FefuHobbies.Migrations
                         {
                             Id = "23587d20-dec3-11ed-b5ea-0242ac120002",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "71ad5586-b920-42f8-bdf6-4d32c2f71124",
+                            ConcurrencyStamp = "260cd174-824e-45a2-8e7f-e4d6c6b54c99",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAELfF+EWTMYpCOIzDXqTmlsVt4NNAT/svPu4vfpFXA7tcpjRGaYlYYBa0NJUcXCmisA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIJue7udAfLCMneh490o5/EH2/wXPrcpqLt9fASCXDwY8lv4DVDcl2KxqUExqRyUww==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

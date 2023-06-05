@@ -1,30 +1,11 @@
-﻿    <div class='header'>
-        <div class='container'>
-            <div class='header-line'>
-                <div class='header-logo'>
-                    <a class="nav-item" asp-area="" asp-controller="Home" asp-action="Index">
-                        <img class ="hd" src="~/img/logo.png" alt="/">
-                    </a>
-                </div>
+﻿<header class="header">
+        <div class="container">
+            <img src="~/img/Logo.png" class="logo">
+            <c>
+                <button class="log-in"><h style="font-size: 24px; color: #292929;">Войти</h></button>
+                <button class="r"><h style="font-size: 24px; color:#E3702F;">Создать резуме</h></button>
+            </c>
 
+        </div>
+    </header>
 
-                <div class='nav'>
-
-                <a class="nav-item" asp-area="" asp-controller="Account" asp-action="Login" >Предложить активность</a>
-                <a class="nav-item" asp-area="" asp-controller="Cards" asp-action="Events" >Мероприятия</a>
-                <a class="nav-item" asp-area="" asp-controller="Cards" asp-action="PointsOfInterst">Точки интереса</a>
-                </div>
-
-
-                <div class="search-box">
-                    <form asp-area="" asp-controller="Cards" asp-action="Page" method="post"  >
-                        <input class="search-txt" type="text" name="keyWords" id="keyWords">
-                            <img class="search-btn" src="~/img/lupa.svg" alt="/">
-                        </input>
-                    </form>
-                </div>
-
-                 <a class="nav-item2" asp-controller="Account" asp-action="Login">Вход</a>
-            </div> 
-        </div> 
-    </div>

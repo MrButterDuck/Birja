@@ -5,7 +5,7 @@ namespace FefuHobbies.Domain.Entities
 {
 	public class Card
 	{
-        public Card() => IsPublished = false;
+        //public Card() => IsPublished = false;
 
 		[System.ComponentModel.DataAnnotations.Required]
 		public ulong Id { get; set; }
@@ -14,35 +14,39 @@ namespace FefuHobbies.Domain.Entities
 		public string Name { get; set; }
         [Display(Name = "Описание")]
         public string Description { get; set; } = String.Empty;
-        [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Выберите вид мероприятия")]
-        [Display(Name = "Вид Мероприятия")]
-        public string Type { get; set; }
-        [Display(Name = "Доступ")]
-        public int access { get; set; } = 0;
-        [Display(Name = "Дата")]
+        [Display(Name = "Требования")]
+        public string requirements { get; set; } = String.Empty;
+        [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Выберите вид работы")]
+        [Display(Name = "Вид работы")]
+        public short Type { get; set; }
+        [Display(Name = "Дата начала")]
         [DataType(DataType.Date)]
-        public string Date { get; set; }
-        [Display(Name = "Начало мероприятия")]
-        [DataType(DataType.Time)]
-        public string startTime { get; set; }
-        [Display(Name = "Начало мероприятия")]
-        [DataType(DataType.Time)]
-        public string endTime { get; set; }
-        [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Укажите место")]
-        [Display(Name = "Место")]
-        public string Location { get; set; }
-        [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Выберите тег")]
-        [Display(Name = "Тег")]
-        public string Tag { get; set; }
-        [Display(Name = "Обложка")]
-        public string ImagePath { get; set; }
-        [Display(Name = "Принято")]
-        public bool IsPublished { get; set; }
-        //[Display(Name = "Колличество участников")]
-        //public uint Count { get; set; }
-        //[Display(Name = "Участники")]
-        //public List<PeopleList> people { get; set; }
-        
+        public string StartDate { get; set; }
+        [Display(Name = "Дата окончания")]
+        [DataType(DataType.Date)]
+        public string EndDate { get; set; }
+        [Display(Name = "Оплата от")]
+        public int LowPay { get; set; }
+        [Display(Name = "Оплата до")]
+        public int HighPay { get; set; }
+        [Display(Name = "Удаленная Работа")]
+        public int HomeJob { get; set; }
+        [Display(Name = "Специализация1")]
+        public string Prof1 { get; set; } = String.Empty;
+        [Display(Name = "Специализация2")]
+        public string Prof2 { get; set; } = String.Empty;
+        [Display(Name = "Специализация3")]
+        public string Prof3 { get; set; } = String.Empty;
+        [Display(Name = "Навыки1")]
+        public string Skills1 { get; set; } = String.Empty;
+        [Display(Name = "Навыки2")]
+        public string Skills2 { get; set; } = String.Empty;
+        [Display(Name = "Навыки3")]
+        public string Skills3 { get; set; } = String.Empty;
+        [Display(Name = "Картинка")]
+        public string ImagePath { get; set; } = String.Empty;
+
+
 
     }
 }

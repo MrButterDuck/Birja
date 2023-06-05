@@ -41,14 +41,14 @@ namespace FefuHobbies.Domain.Repositories.EntityFramework
 		{
 			if (keyWords == null) keyWords = " ";
 			List<string> keys = keyWords.Split().ToList();
-            IQueryable < Card > res = context.Cards.Where(x => x.Name.Contains(keys.First()) || x.Description.Contains(keys.First()) || keys.Contains(x.Tag) || keys.Contains(x.Type)).Where(x => x.IsPublished == published);
+            IQueryable < Card > res = context.Cards.Where(x => x.Name.Contains(keys.First()) || x.Description.Contains(keys.First()));
             foreach (string key in keys)
 			{
-				res = res.Where(x => x.Name.Contains(keys.First()) || x.Description.Contains(keys.First()) || keys.Contains(x.Tag) || keys.Contains(x.Type));
+				res = res.Where(x => x.Name.Contains(keys.First()) || x.Description.Contains(keys.First()));
 			}
 			return res;
         }
-
+		/*
         public IQueryable<Card> Last()
 		{
 			List<Card> r = context.Cards.AsEnumerable().OrderBy(x => x.Id).Where(x => x.IsPublished == true).ToList();
@@ -61,7 +61,7 @@ namespace FefuHobbies.Domain.Repositories.EntityFramework
         public IQueryable<Card> excludeType(string type)
         {
             return context.Cards.Where(x => x.Type != type).Where(x => x.IsPublished == true);
-        }
+        }*/
 
         //public List<PeopleList> getEmails(ulong id)
         //{

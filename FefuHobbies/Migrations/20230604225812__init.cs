@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace FefuHobbies.Migrations
+namespace Birja.Migrations
 {
     /// <inheritdoc />
     public partial class _init : Migration
@@ -60,15 +60,20 @@ namespace FefuHobbies.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    access = table.Column<int>(type: "int", nullable: false),
-                    Date = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    startTime = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    endTime = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Tag = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsPublished = table.Column<bool>(type: "bit", nullable: false)
+                    requirements = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Type = table.Column<short>(type: "smallint", nullable: false),
+                    StartDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EndDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LowPay = table.Column<int>(type: "int", nullable: false),
+                    HighPay = table.Column<int>(type: "int", nullable: false),
+                    HomeJob = table.Column<int>(type: "int", nullable: false),
+                    Prof1 = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Prof2 = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Prof3 = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Skills1 = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Skills2 = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Skills3 = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -186,14 +191,14 @@ namespace FefuHobbies.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "812517a2-dec2-11ed-b5ea-0242ac120002", "2862404d-f22b-4231-8a66-0e09e0857964", "admin", "ADMIN" },
-                    { "c2cc70ec-dec2-11ed-b5ea-0242ac120002", "1bc47623-411c-4682-979e-7452adc9ee23", "user", "USER" }
+                    { "812517a2-dec2-11ed-b5ea-0242ac120002", "66472702-6f06-4bf2-81d4-6459f2cefe55", "admin", "ADMIN" },
+                    { "c2cc70ec-dec2-11ed-b5ea-0242ac120002", "e50824da-7f2a-447b-8cdf-1bdf0ab4f08b", "user", "USER" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "23587d20-dec3-11ed-b5ea-0242ac120002", 0, "71ad5586-b920-42f8-bdf6-4d32c2f71124", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAELfF+EWTMYpCOIzDXqTmlsVt4NNAT/svPu4vfpFXA7tcpjRGaYlYYBa0NJUcXCmisA==", null, false, "", false, "admin" });
+                values: new object[] { "23587d20-dec3-11ed-b5ea-0242ac120002", 0, "260cd174-824e-45a2-8e7f-e4d6c6b54c99", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAEIJue7udAfLCMneh490o5/EH2/wXPrcpqLt9fASCXDwY8lv4DVDcl2KxqUExqRyUww==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

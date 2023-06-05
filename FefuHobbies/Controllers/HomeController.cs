@@ -17,8 +17,8 @@ namespace FefuHobbies.Controllers
         public IActionResult Index()
         {
             MainViewModel model = new MainViewModel();
-            model.last = dataManager.Cards.Last().TakeLast(4);
-            model.second = dataManager.Cards.ByType("Точка-интереса").Take(4);
+            //model.last = dataManager.Cards.Last().TakeLast(4);
+            //model.second = dataManager.Cards.ByType("Точка-интереса").Take(4);
             return View(model);
         }
 

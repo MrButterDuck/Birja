@@ -1,48 +1,49 @@
 ﻿@model CardViewModel
 
 <div class ="org">
-    @if (Model.keyWords == null)
-    {
-        <a class = "back"  asp-area="" asp-controller="Home" asp-action="Index">назад</a>
-    }
-    else
-    {
-        <form asp-area="" asp-controller="Cards" asp-action="Page" method="post"  >
-            <input type="hidden" name="keyWords" value=@Model.keyWords>
-            <input type="hidden" name="page" value=@Model.page>
-            <input class="back" type="submit" value="назад">
-        </form>
-    }
-    <div class = "flex2">
-        <div class = "phot" ><img class = "phot" src="~/CardImages/@Model.card.ImagePath"/></div>
-        <div class = "name-meet">
-            <div class = "name-meet-txt">@Model.card.Name</div>
-            <div class = "text-meet">@Model.card.Description</div>
-            <div class = "teg">@Model.card.Tag</div>
-            <div class = "tip">@Model.card.Type</div>
+    
+    <div class = "container1">
+        <a class = "back" href = "#">назад</a>
+        <div class = "flex">
+        <div class = "poflexim">
+        
+        <div class = bebra1>
+        <div class = "flex">
+        <div class = "photic"></div>
+        <div class = "bebra5">   
+        <div class = "namest">Фамилия Имя Отчество</div>
+        <div class ="prod1">01.03.2003</div>
+        <div class ="btn6">
+            <a class = "reg-txt6" href = "#">Специальность</a>
+        </div>
+        <div class ="prod1">Есть опыт участия в стажировках<br>Позиция:стажер</div>
             </div>
+            </div>
+            </div>
+        
+            
+            <div class = "text">
+                <div class = "texttext">много текста о себе </div>
+                
+                <div class = "kostil"></div>
+            </div>
+            </div>
+            
+            
+            <div class = "company">
+            
+            <div class = "we_find" style = "margin-top: 10%">Компетенции:</div>
+            <div class = "we_find">компетенции</div>
+            <div class ="poloska2"></div>
+                
+                <div class = "we_find">Предпочтения:</div>
+            <div class = "we_find">предпочтения</div>
+            <div class ="poloska2"></div>
+                
+                <div class = "we_find">Пожелания к стажировке:</div>
+            <div class = "we_find">пожелания</div>
+            <div class ="poloska2"></div>
+            </div>
+           
         </div>
-
-    <div class = "info-meet">
-        <div class = "flex1">
-        <span>
-        <div class = "flex1">
-        <img class = "sp"  src="~/img/cal.svg" alt = "/">
-        <div class ="calcc">@Model.card.Date</div>
-        </div>
-
-        <div class = "flex1">
-        <img class = "sp"  src="~/img/time.svg" alt = "/">
-        <div class ="calcc">@Model.card.startTime-@Model.card.endTime</div>
-        </div>
-
-        <div class = "flex1">
-        <img class = "sp"  src="~/img/place.svg" alt = "/">
-        <div class ="calcc">@Model.card.Location</div>
-        </div>
-        </span>
-        <a class = "btn-goo" href ="#">Участвовать</a>
-        </div>
-        </div>
-
-        </div>
+            </div>

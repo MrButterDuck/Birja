@@ -38,15 +38,6 @@ namespace FefuHobbies.Areas.Admin.Controllers
                         titleImageFile.CopyTo(stream);
                     }
                 }
-                if (model.startTime == null || model.endTime == null)
-                {
-                    model.startTime = "круглосуточно";
-                    model.endTime = "круглосуточно";
-                }
-                if (model.Date == null)
-                {
-                    model.Date = "еженедельно";
-                }
                 dataManager.Cards.SaveCard(model);
                 return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
             }
@@ -94,7 +85,7 @@ namespace FefuHobbies.Areas.Admin.Controllers
         public async Task<IActionResult> PointsOfInterst(int page = 1)
         {
             int pageSize = 20;   // количество элементов на странице
-            IQueryable<Card> source = dataManager.Cards.ByType("Точка-интереса");
+            IQueryable<Card> source = dataManager.Cards.GetCards();
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
@@ -111,7 +102,7 @@ namespace FefuHobbies.Areas.Admin.Controllers
         public async Task<IActionResult> Events(int page = 1)
         {
             int pageSize = 20;   // количество элементов на странице
-            IQueryable<Card> source = dataManager.Cards.excludeType("Точка-интереса");
+            IQueryable<Card> source = dataManager.Cards.GetCards();
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
@@ -129,7 +120,7 @@ namespace FefuHobbies.Areas.Admin.Controllers
         public async Task<IActionResult> Last(int page = 1)
         {
             int pageSize = 20;   // количество элементов на странице
-            IQueryable<Card> source = dataManager.Cards.Last();
+            IQueryable<Card> source = dataManager.Cards.GetCards();
             var count = await source.CountAsync();
             var items = await source.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 

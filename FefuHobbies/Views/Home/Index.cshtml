@@ -1,54 +1,132 @@
-﻿@using FefuHobbies.Models
-@model MainViewModel
+﻿<section class="search">
+        <div class="s">
+            <div class="container1">
+                <h class="h1">
+                Твоя стажировка
+                </h>
+                <div class="cont">
+                    <button class="cont1"></button>
+                    <button class="cont2">
+                        <h style="font-size: 25px; color: #ffff;">
+                        поиск
+                        </h>
+                    </button>
+                </div>
+            </div>
 
-<div class='container'>
-    <div class = 'card_open'>
-        <div class='cardopen_txt'>Отдыхай,<br>Учись,<br>Наслаждайся!
-            <a class="btn_cardopen_txt" asp-area="" asp-controller="Home" asp-action="About">Подробнее</a>
-        </div>
-        <div class ='cardopen_image'>
-            <img class = "sr"  src="~/img/star.svg" alt="/">
-        </div>
-    </div>
-    <div class = 'flex2'>
-        <div class = 'this_week'>На этой неделе</div>
-        <a class = 'all_meet' asp-area="" asp-controller="Cards" asp-action="Events">все мероприятия</a>
-    </div> 
-</div>
-<div class='container'>
-    <div class = 'flex2'>
-    @foreach(Card c in Model.last){
-        <a class = "card" asp-area="" asp-controller="Cards" asp-action="CardView" asp-route-id="@c.Id">                 
-        <div class = 'card-photo' style="background-image: url('../CardImages/@c.ImagePath'); background-size: cover;">  
-            <div class = 'flex1'>
-                <div class = 'card-txt1'>@c.Tag</div>
-                <div class = 'card-txt2'>@c.Type</div>                                
+            <div class="container2">
+                <div class="bloc1">
+                    <button class="b1"><h style="font-size: 20px; color: #ffff;">О сервисе</hstyle=></button>
+                    <button class="b2"><h style="font-size: 20px; color: #ffff;">Работадателям</h></button>
+                </div>
+
+                <button class="bloc2">
+                    <h style="font-size: 20px; color: #ffff;">Раширенный поиск</h>
+                </button>
             </div>
-            <div class = 'card-txt3'>@c.Name</div>
-            <div class = 'card-txt4'>@c.Date, с @c.startTime до @c.endTime</div>
         </div>
-        </a>
-    }
-    </div>
-    <div class = 'flex2'>
-        <div class = 'this_week'>Где поугялть</div>
-        <a class = 'all_meet' asp-area="" asp-controller="Cards" asp-action="PointsOfInterst">все мероприятия</a>
-    </div>      
-</div>
-<div class='container'>
-    <div class = 'flex2'>
-    @foreach (Card c in Model.second)
-    {
-        <a class = "card" asp-area="" asp-controller="Cards" asp-action="CardView" asp-route-id="@c.Id" asp-route-retCtrl="Home" asp-route-retAct="Index">                 
-        <div class = 'card-photo' style="background-image: url('../CardImages/@c.ImagePath'); background-size: cover;">  
-            <div class = 'flex1'>
-                <div class = 'card-txt1'>@c.Tag</div>
-                <div class = 'card-txt2'>@c.Type</div>                                
+    </section>
+    <section>
+        <div class="flex">
+            <div>
+                <h class="h3">
+                    Стажировки дня
+                </h>
             </div>
-            <div class = 'card-txt3'>@c.Name</div>
-            <div class = 'card-txt4'>@c.Date, с @c.startTime до @c.endTime</div>
+            <div class="conteiner">
+               <ul class="cards">
+                    <a class = "card" asp-area="" asp-controller="Cards" asp-action="CardView" asp-route-id="0" asp-route-retCtrl="Home" asp-route-retAcr="Index">
+                    <li class="card card_tape1">
+                    <h>
+                        <div class="coupon">
+                            <div class="container">
+                              <h2>Очень крутая стажировка</h2>
+                            </div>
+                            <div class="container">
+                                <h3 style="font-size: 20px">Крутое краткое описание</h3>
+                            </div>
+                            <div class="container">
+                              <p class="expire"style="font-size: 20px;">от 100000 руб</p>
+                            </div>
+                          </div> 
+                    </h>
+                    </li>
+                    </a>
+                    <li class="card card_tape1">
+                    <h>
+                        <div class="coupon">
+                            <div class="container">
+                              <h2>Очень крутая стажировка</h2>
+                            </div>
+                            <div class="container">
+                                <h3 style="font-size: 20px">Крутое краткое описание</h3>
+                            </div>
+                            <div class="container">
+                              <p class="expire"style="font-size: 20px;">от 100000 руб</p>
+                            </div>
+                          </div> 
+                    </h>
+                    </li>
+                    <li class="card card_tape1">
+                    <h>
+                        <div class="coupon">
+                            <div class="container">
+                              <h2>Очень крутая стажировка</h2>
+                            </div>
+                            <div class="container">
+                                <h3 style="font-size: 20px">Крутое краткое описание</h3>
+                            </div>
+                            <div class="container">
+                              <p class="expire"style="font-size: 20px;">от 100000 руб</p>
+                            </div>
+                          </div> 
+                    </h>
+                    </li>
+                    <li class="card card_tape1">
+                    <h>
+                        <div class="coupon">
+                            <div class="container">
+                              <h2>Очень крутая стажировка</h2>
+                            </div>
+                            <div class="container">
+                                <h3 style="font-size: 20px">Крутое краткое описание</h3>
+                            </div>
+                            <div class="container">
+                              <p class="expire"style="font-size: 20px;">от 100000 руб</p>
+                            </div>
+                          </div> 
+                    </h>
+                    </li>
+                    <li class="card card_tape1">
+                    <h>
+                        <div class="coupon">
+                            <div class="container">
+                              <h2>Очень крутая стажировка</h2>
+                            </div>
+                            <div class="container">
+                                <h3 style="font-size: 20px">Крутое краткое описание</h3>
+                            </div>
+                            <div class="container">
+                              <p class="expire"style="font-size: 20px;">от 100000 руб</p>
+                            </div>
+                          </div> 
+                    </h>
+                    </li>
+                    <li class="card card_tape1">
+                    <div class="coupon">
+                        <div class="container">
+                          <h2>Очень крутая стажировка</h2>
+                        </div>
+                        <div class="container">
+                            <h3 style="font-size: 20px">Крутое краткое описание</h3>
+                        </div>
+                        <div class="container">
+                          <p class="expire"style="font-size: 20px;">от 100000 руб</p>
+                        </div>
+                      </div> 
+                    </li>
+                </ul>
+
+            </div>
         </div>
-        </a>
-    }    
-    </div>
-</div>
+    </section>
