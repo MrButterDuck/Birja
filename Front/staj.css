@@ -1,0 +1,250 @@
+html {
+    height: 100%;
+box-sizing: border-box;
+font-size: calc(100vw / 2560 * 10);
+    @media only screen and(max-width:500px){
+        font-size: calc(100vw / 375 * 10);
+}
+}
+@media only screen and (min-width:500px){
+    .flex
+    {
+        display: flex;
+        justify-content: space-around;
+    }
+    .container1
+    {
+        margin:10rem 45rem;
+    }
+    .bebra1
+    {
+        width: 80rem;
+        height: 30rem;
+        border-radius: 3rem;
+        background-color: #FFF;
+        padding-left:5rem;
+    }
+    .namest
+    {
+        font-family: 'Bahnschrift';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 4rem;
+        line-height: 4.8rem;
+        padding-top:5rem;
+    }
+    .poloska
+    {
+        width: 75rem;
+        height: 0.3rem;
+        background-color: #E3702F;
+        
+        border-radius:5rem;
+    }
+    .prod
+    {
+        font-family: 'Bahnschrift';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3rem;
+        line-height: 3.6rem;
+        margin-top: 0.5rem;
+    }
+    .del
+    {
+        font-family: 'Bahnschrift';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3rem;
+        line-height: 3.6rem;
+        margin-top: 5rem;
+        margin-left: -8rem;
+    }
+    .platyat
+    {
+        font-family: 'Bahnschrift';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3rem;
+        line-height: 3.6rem;
+        color: #E3702F;
+        margin-top: 5rem;
+        margin-left: 16.5rem;
+    }
+    .text
+    {
+         width: 80rem;
+        min-height: 30rem;
+        border-radius: 3rem;
+        background-color: #FFF;
+        padding-left:5rem;
+        
+        margin-top:5rem;
+    }
+    .texttext
+    {
+        padding-top:3rem;
+        font-family: 'Bahnschrift';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2.2rem;
+        line-height: 2.6rem;
+    }
+        .reg-txt4
+{
+    
+    background-color:  #E3702F;
+    width: 35rem;
+    height: 5.5rem;
+    border-radius: 1rem;
+    font-style: normal;
+    font-size: 3rem;
+    margin-left:50%;
+    margin-top: 2rem;
+    display:flex;
+    font-family: 'Bahnschrift';
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    text-decoration: none;
+}
+    .kostil
+    {
+        height: 3rem;
+        margin-top 2rem;
+    }
+    .company
+    {
+        width: 60rem;
+        min-height: 50rem;
+        background-color: #FFF;
+        border-radius:3rem;
+        padding-left: 5rem;
+    }
+    .comp
+    {
+        font-family: 'Bahnschrift';
+font-style: normal;
+font-weight: 400;
+font-size: 4rem;
+line-height: 4.8rem;
+        margin-top: 3rem;
+    }
+    .phot
+    {
+        margin-top: 3rem;
+        width: 10rem;
+        height: 10rem;
+        background-color: #F5F5F5;
+        border-radius: 2rem;
+    }
+    .comm
+    {
+        font-family: 'Bahnschrift';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3rem;
+        line-height: 3.6rem;
+        color: #E3702F;
+    }
+    .star
+    {
+        width: 4rem;
+    }
+        .poloska2
+    {
+        width: 55rem;
+        height: 0.3rem;
+        background-color: #E3702F;
+        border-radius:5rem;
+        margin-left: 3rem;
+        margin-top: 2rem;
+    }
+    .we_find
+    {
+        font-family: 'Bahnschrift';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2.2rem;
+        line-height: 2.6rem;
+    }
+    li
+    {
+        font-family: 'Bahnschrift';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2.2rem;
+        line-height: 2.6rem;
+    }
+    .tr
+    {
+        font-family: 'Bahnschrift';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2.2rem;
+        line-height: 2.6rem;
+    }
+    .adr
+    {
+        font-family: 'Corbel';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 2.6rem;
+        line-height: 3.1rem;
+        margin-top:15rem;
+    }
+    .reg-txt5
+{
+    
+    background-color:  #FFF;
+    width: 16rem;
+    height: 11rem;
+    border-radius: 2rem;
+    border: 0.3rem solid #E3702F;
+    font-style: normal;
+    font-size: 3rem;
+    margin-left:60%;
+    margin-top: -7rem;
+    display:flex;
+    font-family: 'Bahnschrift';
+    justify-content: center;
+    align-items: center;
+    color: #E3702F;
+    text-decoration: none;
+}
+        .reg-txt6
+{
+    
+    background-color:  #FFF;
+    width: 22rem;
+    height: 4rem;
+    border-radius: 2rem;
+    border: 0.3rem solid #E3702F;
+    font-style: normal;
+    font-size: 3rem;
+    margin-left: 22rem;
+    display:flex;
+    font-family: 'Bahnschrift';
+    justify-content: center;
+    align-items: center;
+    color: #E3702F;
+    text-decoration: none;
+}
+    .prod1
+    {
+        font-family: 'Bahnschrift';
+font-style: normal;
+font-weight: 400;
+font-size: 2rem;
+line-height: 2.2rem;
+text-align: right;
+    }
+        .photic
+    {
+        margin-top: 3rem;
+        width: 20rem;
+        height: 20rem;
+        background-color: #F5F5F5;
+        border-radius: 20rem;
+    }
+}
